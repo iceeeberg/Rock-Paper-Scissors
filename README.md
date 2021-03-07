@@ -12,4 +12,4 @@ This was the first game application I created with the use of HTML, CSS, and Jav
 
 ## Author 
 
-Dante Leeseberg - Full Stack Software Developer [LinkedIn](https://www.linkedin.com/in/dante-leeseberg-bba05883/))
+Dante Leeseberg - Full Stack Software Developer [LinkedIn](https://www.linkedin.com/in/dante-leeseberg-bba05883/)
