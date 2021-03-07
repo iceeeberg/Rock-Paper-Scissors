@@ -8,7 +8,7 @@ A Rock, Paper, Scissors game created with HTML, CSS, and JavaScript.
 
 ## Summary 
 
-This was the first game application I have created with the use of HTML, CSS, and JavaScript. I had a lot of fun making it and look forward to adding more game applications to my repository. The biggest takeaways I took from creating this game was using  the JavaScript function Math.floor as well as gaining more insight on how to style my click events using CSS. 
+This was the first game application I created with the use of HTML, CSS, and JavaScript. I had a lot of fun making it and look forward to adding more game applications to my repository. The biggest takeaways I took from creating this game was using  the JavaScript function Math.floor as well as gaining more insight on how to style my click events using CSS. 
 
 ## Author 
 
