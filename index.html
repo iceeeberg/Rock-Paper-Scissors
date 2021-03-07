@@ -7,29 +7,27 @@
 </head>
 
 <body>
-
-  <div id=game-container></div>
-
-<div><h3>Choose your weapon: Rock, Paper, or Scissors?</h3></div>
+  <div>
+    <h1>Choose your weapon: Rock, Paper, or Scissors?</h1>
+  </div>
   
-<div id=game-images>
-  <center>
-    <button class="button" id="paper"><img class= "button" id ="paper" src="Paper.png">
+  <div id=game-images>
+    <button class="button" id="paper">
+      <img class= "paper" id ="paper" src="Paper.png">
     </button>
-  <button class="button" id="rock"><img class= "rock" src= "Rock.png" >
-  </button>
-  <button class="button" id="scissors"><img class="scissors" src="Scissors.png">
-  </button>
-    </center>
-</div>
+    <button class="button" id="rock">
+      <img class= "rock" src= "Rock.png" >
+    </button>
+    <button class="button" id="scissors">
+      <img class="scissors" src="Scissors.png">
+    </button>
+  </div>
 
-<br>
+  <p id="game-result"></p>
 
-<p id="game-result"></p>
+  <button class="play-again" id="play-button">Play Again</button>
 
-<center><button class="play-again" id="play-button">Play Again</button></center>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 
 </body>
 </html>

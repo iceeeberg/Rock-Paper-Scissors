@@ -1,68 +1,48 @@
-const rock = document.getElementById('rock');
-const paper = document.getElementById('paper');
-const scissors = document.getElementById('scissors');
 const gameResult = document.getElementById('game-result')
 const playAgain = document.getElementById('play-button');
 
-rock.addEventListener('click', () => {
-  playGame('rock');
-});
-paper.addEventListener('click', () => {
-  playGame('paper');
-});
-scissors.addEventListener('click',() => {
-  playGame('scissors');
+const gameBtns = document.querySelectorAll('img');
+gameBtns.forEach((btn) => {
+  btn.addEventListener("click", (e) => playGame(e.target.classList.value));
 });
 
 function playGame (playerChoice) {
-  const gameElements = ["rock", "paper", "scissors"];
-  playerInput = playerChoice;
-
-  opponentInput = Math.floor(Math.random()* gameElements.length);
-  opponentChoice = gameElements [opponentInput];
-
-  if (playerInput === "rock" && opponentChoice ==="paper") {
-    gameResult.textContent = 'You chose' + ' ' + playerInput  + ' ' + 'and the opponent chose' + ' ' + 
-    opponentChoice + ',' + ' ' + 'You Lose!';
-  };
+  opponentChoice = computerChoice()
   
-  if (playerInput === "paper" && opponentChoice ==="scissors") {
-  gameResult.textContent = 'You chose' + ' ' + playerInput  + ' ' + 'and the opponent chose' + ' ' + 
-  opponentChoice + ',' + ' ' + 'You Lose!';
- };
+  switch (playerChoice) {
+    case 'rock':
+      if (opponentChoice === 'paper') lose(playerChoice, opponentChoice);
+      if(opponentChoice === 'scissors') win(playerChoice, opponentChoice);
+      break;
+    case 'paper':
+      if (opponentChoice === 'scissors') lose(playerChoice, opponentChoice);
+      if (opponentChoice === 'rock') win(playerChoice, opponentChoice);
+      break;
+    case 'scissors':
+      if(opponentChoice === 'rock') lose(playerChoice, opponentChoice);
+      if (opponentChoice === 'paper') win(playerChoice, opponentChoice);
+      break;
+  }
+    if (playerChoice === opponentChoice) {
+      gameResult.textContent = `You chose ${playerChoice} and the opponent chose ${opponentChoice}, It's a draw`
+      };
+  }
 
- if (playerInput === "scissors" && opponentChoice ==="rock") {
-  gameResult.textContent = 'You chose' + ' ' + playerInput  + ' ' + 'and the opponent chose' + ' ' + 
-  opponentChoice + ',' + ' ' + 'You Lose!';
- }; 
+function lose (playerChoice, opponentChoice){
+  return gameResult.textContent = `You chose ${playerChoice} and the opponent chose ${opponentChoice}, You Lose!`
+  }
 
- if (playerInput === "scissors" && opponentChoice ==="paper") {
-  gameResult.textContent = 'You chose' + ' ' + playerInput  + ' ' + 'and the opponent chose' + ' ' + 
-  opponentChoice + ',' + ' ' + 'You Win!';
- } 
+function win (playerChoice, opponentChoice){
+  return gameResult.textContent = `You chose ${playerChoice} and the opponent chose ${opponentChoice}, You Win!`
+}
 
- if (playerInput === "paper" && opponentChoice ==="rock") {
-  gameResult.textContent = 'You chose' + ' ' + playerInput  + ' ' + 'and the opponent chose' + ' ' + 
-  opponentChoice + ',' + ' ' + 'You Win!';
- }; 
+function computerChoice(){
+  const gameElements = ["rock", "paper", "scissors"];
+  opponentInput = Math.floor(Math.random()* gameElements.length);
+  return  gameElements [opponentInput];
+}
 
- if (playerInput === "rock" && opponentChoice ==="scissors") {
-  gameResult.textContent = 'You chose' + ' ' + playerInput  + ' ' + 'and the opponent chose' + ' ' + 
-  opponentChoice + ',' +  ' '  + 'You Win!';
- }; 
+playAgain.addEventListener('click',() => play('playAgain'));
+const play = () => window.location.reload();
 
- if (playerInput === opponentChoice) {
-  gameResult.textContent = 'You chose' + ' ' + playerInput  + ' ' + 'and the opponent chose' + ' ' + 
-  opponentChoice + ',' + ' ' +  "It's a draw!";
- }
-
-};
-
-playAgain.addEventListener('click',() => {
-  play('playAgain');
-});
-
-function play(){
-  window.location.reload();
-};
 
